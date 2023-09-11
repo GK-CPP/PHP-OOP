@@ -2,21 +2,33 @@
 
 class base
 {
-    public $name;
+    protected $name;
 
     public function __construct($name)
     {
         $this->name = $name;
     }
-    public function show()
+    protected function show()
     {
 
         echo $this->name;
     }
 }
 
+class child extends base
+{
+    public function get()
+    {
+        echo $this->name . '<br>';
+    }
+}
+
 $obj = new base('gulam kibria');
 
-$obj->name = 'hamza chowdhury';
+//Cannot access protected property base
+//$obj->name = 'hamza chowdhury'; 
+//$obj->show();
 
-$obj->show();
+$obj2 = new child('hamza chowdhury');
+
+$obj2->get();
