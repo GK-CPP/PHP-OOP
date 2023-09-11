@@ -23,3 +23,22 @@ base::show();
 $obj = new base('amir hamza');
 
 $obj->show();
+
+/**************************************************** */
+
+
+class base1
+{
+    public static $name = 'arif kibria';
+}
+
+class child extends base1
+{
+    public function show()
+    {
+        echo parent::$name;
+    }
+}
+
+$obj = new child();
+$obj->show();
