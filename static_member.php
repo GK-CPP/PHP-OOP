@@ -9,17 +9,17 @@ class base
         echo self::$name;
     }
 
-    // public function __construct($n)
-    // {
-    //     //echo $this->name;
-    //     self::$name = $n;
-    // }
+    public function __construct($n)
+    {
+        //echo $this->name;
+        self::$name = $n;
+    }
 }
 
 echo base::$name;
 base::show();
 
 
-// $obj = new base('amir hamza');
+$obj = new base('amir hamza');
 
-// $obj->show();
+$obj->show();
