@@ -2,18 +2,27 @@
 
 class person
 {
-    public $name = 'No name', $age = 'No age';
+    public $name, $age;
+
+    function __construct($name = 'No name', $age = 0)
+    {
+        $this->name = $name;
+        $this->age = $age;
+    }
 
     function show()
     {
-        echo $this->name . '<br>' . $this->age;
+        echo $this->name . '<br>' . $this->age . '<br>';
     }
 }
 
 
-$obj = new person();
+$obj = new person('gulam kibria', 25);
 
-$obj->name = 'gulam kibria';
-$obj->age = 25;
+//$obj->name = 'gulam kibria';
+//$obj->age = 25;
 
 $obj->show();
+
+$obj2 = new person();
+$obj2->show();
