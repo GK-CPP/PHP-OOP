@@ -1,34 +1,35 @@
 <?php
 
-class base
+
+class base_private
 {
-    protected $name;
+    private $name;
 
     public function __construct($name)
     {
         $this->name = $name;
     }
-    protected function show()
+    private function show()
     {
 
         echo $this->name;
     }
 }
 
-class child extends base
+class child1 extends base_private
 {
     public function get()
     {
-        echo $this->name . '<br>';
+        // echo $this->name . '<br>'; //name not found
     }
 }
 
-$obj = new base('gulam kibria');
+$obj = new base_private('gulam kibria');
 
-//Cannot access protected property base
+//Cannot access private property base
 //$obj->name = 'hamza chowdhury'; 
 //$obj->show();
 
-$obj2 = new child('hamza chowdhury');
-
-$obj2->get();
+$obj2 = new child1('hamza chowdhury');
+//Undefined property: child1
+//$obj2->get();
